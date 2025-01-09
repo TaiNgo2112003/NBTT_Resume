@@ -936,60 +936,49 @@
           </div>
   
           <div class="col-lg-7">
-            <form  action="forms/contact.php" id="emailForm" method="post"  class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-  
-              <div class="row gy-4">
-                  <!-- Your Name -->
-                  <div class="col-md-6">
-                    <label for="name" class="pb-2">Your Name</label>
-                    <input type="text" name="name" id="name" class="form-control" required="">
-                  </div>
-  
-                  <!-- Your Email -->
-                  <div class="col-md-6">
-                    <label for="email" class="pb-2">Your Email</label>
-                    <input type="email" class="form-control" name="email" id="email" required="">
-                  </div>
-  
-                  <!-- Phone Number -->
-                  <div class="col-md-6">
-                    <label for="phone" class="pb-2">Phone Number</label>
-                    <input type="text" class="form-control" name="phone" id="phone" required="">
-                  </div>
-  
-                  <!-- Gender -->
-                  <div class="col-md-6">
-                    <label for="gender" class="pb-2">Gender</label>
-                    <select class="form-control" name="gender" id="gender" required="">
-                      <option value="" disabled selected>Select Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-  
-                  <!-- Subject -->
-                  <div class="col-md-12">
-                    <label for="subject" class="pb-2">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject" required="">
-                  </div>
-  
-                  <!-- Message -->
-                  <div class="col-md-12">
-                    <label for="message" class="pb-2">Message</label>
-                    <textarea class="form-control" name="message" rows="10" id="message" required=""></textarea>
-                  </div>
-  
-                  <!-- Submit Button -->
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                    <button type="submit" id="sendEmailButton">Send Message</button>
-                  </div>
+            <form action="#" id="emailForm" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <label for="name" class="pb-2">Your Name</label>
+                        <input type="text" name="name" id="name" class="form-control" required="">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="pb-2">Your Email</label>
+                        <input type="email" class="form-control" name="email" id="email" required="">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="pb-2">Phone Number</label>
+                        <input type="text" class="form-control" name="phone" id="phone" required="">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="gender" class="pb-2">Gender</label>
+                        <select class="form-control" name="gender" id="gender" required="">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="subject" class="pb-2">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="subject" required="">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="message" class="pb-2">Message</label>
+                        <textarea class="form-control" name="message" rows="10" id="message" required=""></textarea>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <button type="submit" id="sendEmailButton">Send Message</button>
+                    </div>
                 </div>
             </form>
-          </div><!-- End Contact Form -->
+        </div>
+        
+          <!-- End Contact Form -->
   
         </div>
   
@@ -999,72 +988,6 @@
   
   </main>
   
-      
-      <!-- Mã JavaScript xử lý EmailJS -->
-      <script type="text/javascript">
-          // Khởi tạo EmailJS
-          (function () {
-              try {
-                  emailjs.init("hMCqWXwT0yHsrdojp");
-                  console.log("EmailJS đã được khởi tạo thành công");
-              } catch (error) {
-                  console.error("Lỗi khi khởi tạo EmailJS:", error);
-              }
-          })();
-  
-          // Xử lý sự kiện submit form
-          document.addEventListener("DOMContentLoaded", () => {
-              const emailForm = document.getElementById("emailForm");
-  
-              if (emailForm) {
-                  emailForm.addEventListener("submit", (event) => {
-                      event.preventDefault(); // Ngăn form gửi mặc định
-  
-                      // Lấy dữ liệu từ form
-                      const name = document.getElementById("name").value.trim();
-                      const email = document.getElementById("email").value.trim();
-                      const phone = document.getElementById("phone").value.trim();
-                      const gender = document.getElementById("gender").value.trim();
-                      const message = document.getElementById("message").value.trim();
-  
-                      // Kiểm tra các trường có bị trống không
-                      if (!name || !email || !phone || !gender || !message) {
-                          alert("Vui lòng điền đầy đủ thông tin vào các trường!");
-                          return;
-                      }
-  
-                      // Gửi email qua EmailJS
-                      emailjs
-                          .send("service_kframtx", "template_8dqmg3o", {
-                              name,
-                              from_name: email,
-                              phone,
-                              to_name: "Ngô Bá Tấn Tài",
-                              gender,
-                              message,
-                              subject: "Liên hệ từ khách hàng",
-                          })
-                          .then(
-                              function (response) {
-                                  alert("Email đã được gửi thành công!");
-                                  console.log("Phản hồi từ EmailJS:", response);
-                              },
-                              function (error) {
-                                  console.error("Lỗi khi gửi email:", error);
-                                  alert("Lỗi khi gửi email: " + (error.text || "Không xác định"));
-                              }
-                          );
-  
-                      // Reset form sau khi gửi
-                      emailForm.reset();
-                  });
-              } else {
-                  console.error("Không tìm thấy form với ID 'emailForm'");
-              }
-          });
-      </script>
-  
-
   <footer id="footer" class="footer position-relative light-background">
 
     <div class="container">
@@ -1104,6 +1027,40 @@
 
   <!-- Main JS File -->
   <script src="js/main.js"></script>
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("hMCqWXwT0yHsrdojp");
+    })();
+
+    document.getElementById("emailForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const gender = document.getElementById("gender").value;
+        const message = document.getElementById("message").value;
+
+        emailjs.send("service_kframtx", "template_8dqmg3o", {
+            name: name,
+            from_name: email,
+            phone: phone,
+            to_name: "Ngô Bá Tấn Tài",
+            gender: gender,
+            message: message
+        })
+        .then(function(response) {
+            alert("Email đã được gửi thành công!");
+            document.getElementById("emailForm").reset();
+        }, function(error) {
+            alert("Lỗi khi gửi email: " + error.text);
+        });
+    });
+</script>
 
 </body>
 
