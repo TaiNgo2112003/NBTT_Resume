@@ -1261,3 +1261,110 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+/*--------------------------------------------------------------
+# Enhanced Modern Styles for NBTT Portfolio
+--------------------------------------------------------------*/
+.btn-cv-download {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #149ddd 0%, #0b5ed7 100%);
+  color: #ffffff !important;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(20, 157, 221, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cv-download:hover {
+  background: linear-gradient(135deg, #0b5ed7 0%, #0a47a3 100%);
+  box-shadow: 0 6px 20px rgba(11, 94, 215, 0.6);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+.badge-tech {
+  display: inline-block;
+  padding: 4px 9px;
+  margin: 2px 3px 2px 0;
+  font-size: 11.5px;
+  font-weight: 500;
+  background: #f0f7fd;
+  color: #0b5ed7;
+  border-radius: 6px;
+  border: 1px solid #d0e4f7;
+  transition: all 0.2s ease;
+}
+
+.badge-tech:hover {
+  background: #e1f0fc;
+  border-color: #0b5ed7;
+}
+
+.badge-phase {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #0f3c78;
+  color: #ffffff;
+}
+
+.skill-category-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef2f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+  border-color: #dbeafe;
+}
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f0f7fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-purple {
+  color: #6f42c1 !important;
+}
+
+.bg-purple-subtle {
+  background-color: #f3e8ff !important;
+}
+
+.border-purple-subtle {
+  border-color: #d8b4fe !important;
+}
+
+.portfolio-content {
+  border: 1px solid #eef2f6;
+  transition: all 0.3s ease;
+}
+
+.portfolio-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.portfolio-content img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #eef2f6;
+}
