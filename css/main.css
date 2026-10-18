@@ -10,7 +10,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #0f172a; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -1117,12 +1117,22 @@ section,
 }
 
 .contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
+  color: #ffffff !important;
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 12px 36px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+.contact .php-email-form button[type=submit]:hover {
+  background: #1f2937 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1.5px);
+  color: #ffffff !important;
 }
 
 .contact .php-email-form button[type=submit]:hover {
@@ -1262,109 +1272,301 @@ section,
   /* Add your styles here */
 }
 /*--------------------------------------------------------------
-# Enhanced Modern Styles for NBTT Portfolio
+
+/*--------------------------------------------------------------
+# Modern iOS 18 Liquid Glass & Frosted Minimalist Design System
 --------------------------------------------------------------*/
-.btn-cv-download {
+:root {
+  --glass-bg-light: rgba(255, 255, 255, 0.65);
+  --glass-border-light: rgba(255, 255, 255, 0.4);
+  --glass-bg-dark: rgba(17, 24, 39, 0.85);
+  --glass-border-dark: rgba(255, 255, 255, 0.15);
+}
+
+/* Hero Glass Buttons (iOS 18 Liquid Glass) */
+.glass-btn {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(135deg, #149ddd 0%, #0b5ed7 100%);
-  color: #ffffff !important;
-  padding: 10px 24px;
-  font-weight: 600;
-  border-radius: 50px;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  border-radius: 9999px;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(20, 157, 221, 0.4);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 22px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
 }
 
-.btn-cv-download:hover {
-  background: linear-gradient(135deg, #0b5ed7 0%, #0a47a3 100%);
-  box-shadow: 0 6px 20px rgba(11, 94, 215, 0.6);
-  transform: translateY(-2px);
+.glass-btn-hero {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.glass-btn-hero:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   color: #ffffff !important;
 }
 
+.glass-btn-hero-secondary {
+  background: rgba(0, 0, 0, 0.25);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.glass-btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1.5px);
+  color: #ffffff !important;
+}
+
+.glass-btn-sidebar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+.glass-btn-sidebar:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* Monochromatic Dark Glass Pill */
+.glass-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111827;
+  color: #ffffff !important;
+  padding: 10px 22px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-btn-dark:hover {
+  background: #1f2937;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+  color: #ffffff !important;
+}
+
+/* Monochromatic Subtle Light Glass Pill */
+.glass-btn-subtle {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.04);
+  color: #1f2937 !important;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+.glass-btn-subtle:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #111827 !important;
+  border-color: rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
+
+/* Minimalist Apple-style Frosted Tech Badges */
 .badge-tech {
-  display: inline-block;
-  padding: 4px 9px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
   margin: 2px 3px 2px 0;
   font-size: 11.5px;
   font-weight: 500;
-  background: #f0f7fd;
-  color: #0b5ed7;
-  border-radius: 6px;
-  border: 1px solid #d0e4f7;
+  background: rgba(0, 0, 0, 0.04);
+  color: #374151;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   transition: all 0.2s ease;
 }
 
 .badge-tech:hover {
-  background: #e1f0fc;
-  border-color: #0b5ed7;
+  background: rgba(0, 0, 0, 0.08);
+  color: #111827;
+  border-color: rgba(0, 0, 0, 0.14);
 }
 
 .badge-phase {
   display: inline-block;
-  font-size: 10.5px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 2px 8px;
-  border-radius: 4px;
-  background: #0f3c78;
+  letter-spacing: 0.6px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  background: #111827;
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* Modern Card Aesthetics */
 .skill-category-card {
-  background: #ffffff;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
   padding: 24px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eef2f6;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .skill-category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
-  border-color: #dbeafe;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.07);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .skill-icon {
   width: 44px;
   height: 44px;
-  border-radius: 10px;
-  background: #f0f7fd;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #111827;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.text-purple {
-  color: #6f42c1 !important;
-}
-
-.bg-purple-subtle {
-  background-color: #f3e8ff !important;
-}
-
-.border-purple-subtle {
-  border-color: #d8b4fe !important;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .portfolio-content {
-  border: 1px solid #eef2f6;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portfolio-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
 }
 
 .portfolio-content img {
   height: 200px;
   width: 100%;
   object-fit: cover;
-  border-bottom: 1px solid #eef2f6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Frosted Portfolio Filter Pills */
+.portfolio-filters li {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  margin: 0 4px 8px 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  transition: all 0.2s ease;
+}
+
+.portfolio-filters li.filter-active, .portfolio-filters li:hover {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+/* Quick Direct Contact Cards */
+.contact-quick-card {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  text-decoration: none;
+  color: #1f2937;
+  transition: all 0.25s ease;
+  margin-bottom: 12px;
+}
+
+.contact-quick-card:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111827;
+}
+
+/* Smooth form controls */
+.form-control:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+.scroll-top {
+  background-color: rgba(17, 24, 39, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.scroll-top:hover {
+  background-color: #111827 !important;
+  transform: translateY(-2px);
+}
+
+#sendEmailButton, .php-email-form button[type="submit"] {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#sendEmailButton:hover, .php-email-form button[type="submit"]:hover {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+.scroll-top {
+  background-color: #111827 !important;
 }
